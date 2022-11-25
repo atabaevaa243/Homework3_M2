@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0461A294292FCA6000EE0145 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A293292FCA6000EE0145 /* main.swift */; };
+		0461A29B292FCAAD00EE0145 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A29A292FCAAD00EE0145 /* DataBase.swift */; };
+		0461A29D292FCABB00EE0145 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A29C292FCABB00EE0145 /* Student.swift */; };
+		0461A29F292FCAD900EE0145 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461A29E292FCAD900EE0145 /* Teacher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		0461A290292FCA6000EE0145 /* Homework3_M2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Homework3_M2; sourceTree = BUILT_PRODUCTS_DIR; };
 		0461A293292FCA6000EE0145 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0461A29A292FCAAD00EE0145 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		0461A29C292FCABB00EE0145 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		0461A29E292FCAD900EE0145 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				0461A293292FCA6000EE0145 /* main.swift */,
+				0461A29A292FCAAD00EE0145 /* DataBase.swift */,
+				0461A29C292FCABB00EE0145 /* Student.swift */,
+				0461A29E292FCAD900EE0145 /* Teacher.swift */,
 			);
 			path = Homework3_M2;
 			sourceTree = "<group>";
@@ -120,6 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0461A29F292FCAD900EE0145 /* Teacher.swift in Sources */,
+				0461A29D292FCABB00EE0145 /* Student.swift in Sources */,
+				0461A29B292FCAAD00EE0145 /* DataBase.swift in Sources */,
 				0461A294292FCA6000EE0145 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
