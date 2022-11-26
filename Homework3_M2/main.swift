@@ -26,6 +26,9 @@ database.addStudentMain(firstName: "Кундузай", secondName: "Абдува
 database.deleteStudent(firstName: "Рустам", secondName: "Назаров")
 //Данные студента удалены
 
+database.findStudent(firstName: "Рустам", secondName: "Назаров")
+//Студент не найден
+
 database.addTeacherMain(firstName: "Гульнара", secondName: "Иманбекова", subject: "математика", phoneNumber: "0700987330")
 //Данные преподавателя успешно добавлены
 database.addTeacherMain(firstName: "Адиль", secondName: "Мелисов", subject: "информатика", phoneNumber: "0558767678")
@@ -35,6 +38,10 @@ database.addTeacherMain(firstName: "Индира", secondName: "Русланов
 
 database.deleteTeacher(firstName: "Гульнара", secondName: "Иманбекова")
 //Данные преподавателя удалены
+
+database.findTeacher(firstName: "Гульнара", secondName: "Иманбекова")
+//Преподаватель не найден
+
 database.showAllStudents()
 //#1 Имя,Фамилия - Азиза Атабаева, Возраст - 15, Класс - 9, Средний балл - 4.9
 //#2 Имя,Фамилия - Камила Муртазаева, Возраст - 13, Класс - 7, Средний балл - 4.8

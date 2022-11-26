@@ -28,7 +28,7 @@ class DataBase{
         return modelTeacher
     }
     
-    private func delStudent(firstName: String, secondName: String) -> Student? {
+    private func getStudent2(firstName: String, secondName: String) -> Student? {
         var model2: Student? = nil
         for i in studentArray{
             if i.firstName == firstName && i.secondName == secondName {
@@ -39,7 +39,7 @@ class DataBase{
         return model2
     }
     
-    private func delTeacher(firstName: String, secondName: String) -> Teacher? {
+    private func getTeacher2(firstName: String, secondName: String) -> Teacher? {
         var model2: Teacher? = nil
         for i in teacherArray{
             if i.firstName == firstName && i.secondName == secondName {
@@ -79,7 +79,7 @@ class DataBase{
     }
     
     func deleteStudent(firstName: String, secondName: String){
-        let delModel = delStudent(firstName: firstName, secondName: secondName)
+        let delModel = getStudent2(firstName: firstName, secondName: secondName)
         if delModel?.firstName == firstName && delModel?.secondName == secondName {
             for (id, item) in studentArray.enumerated(){
                 if item.firstName == firstName && item.secondName == secondName {
@@ -94,8 +94,8 @@ class DataBase{
     }
     
     func deleteTeacher(firstName: String, secondName: String){
-        let delModel = delTeacher(firstName: firstName, secondName: secondName)
-        if delModel?.firstName == firstName && delModel?.secondName == secondName {
+        let model2 = getTeacher2(firstName: firstName, secondName: secondName)
+        if model2?.firstName == firstName && model2?.secondName == secondName {
             for (id, item) in teacherArray.enumerated(){
                 if item.firstName == firstName && item.secondName == secondName {
                     teacherArray.remove(at: id)
@@ -106,6 +106,24 @@ class DataBase{
         }else{
                 print("Преподаватель не найден")
             }
+    }
+    
+    func findStudent(firstName: String, secondName: String) {
+        let model2 = getStudent2(firstName: firstName, secondName: secondName)
+        if model2 != nil{
+            print("Имя,Фамилия - \(firstName) \(secondName), Возраст - \(model2!.age), Класс - \(model2!.grade), Средний балл - \(model2!.averageScore)")
+        }else{
+            print("Студент не найден")
+        }
+    }
+    
+    func findTeacher(firstName: String, secondName: String) {
+        let model2 = getTeacher2(firstName: firstName, secondName: secondName)
+        if model2 != nil{
+            print("Имя,Фамилия - \(firstName) \(secondName), Предмет - \(model2!.subject), Номер телефона - \(model2!.phoneNumber)")
+        }else{
+            print("Преподаватель не найден")
+        }
     }
     
     func showAllStudents() {
