@@ -21,7 +21,7 @@ database.addStudentMain(firstName: "Камила", secondName: "Муртазае
 database.addStudentMain(firstName: "Рустам", secondName: "Назаров", age: 18, grade: "11", averageScore: "5.0")
 //Данные студента успешно добавлены
 database.addStudentMain(firstName: "Кундузай", secondName: "Абдувалиева", age: 12, grade: "6", averageScore: "3.8")
-////Данные студента успешно добавлены
+//Данные студента успешно добавлены
 
 database.deleteStudent(firstName: "Рустам", secondName: "Назаров")
 //Данные студента удалены

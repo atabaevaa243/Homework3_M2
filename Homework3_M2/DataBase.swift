@@ -28,6 +28,28 @@ class DataBase{
         return modelTeacher
     }
     
+    private func delStudent(firstName: String, secondName: String) -> Student? {
+        var model2: Student? = nil
+        for i in studentArray{
+            if i.firstName == firstName && i.secondName == secondName {
+                model2 = i
+                break
+            }
+        }
+        return model2
+    }
+    
+    private func delTeacher(firstName: String, secondName: String) -> Teacher? {
+        var model2: Teacher? = nil
+        for i in teacherArray{
+            if i.firstName == firstName && i.secondName == secondName {
+                model2 = i
+                break
+            }
+        }
+        return model2
+    }
+    
     func addStudent(model: Student){
         studentArray.append(model)
     }
@@ -37,8 +59,8 @@ class DataBase{
     }
     
     func addStudentMain(firstName: String, secondName: String, age: Int, grade: String, averageScore: String){
-        let modelStudentTwo = getModelStudent(firstName: firstName, secondName: secondName, age: age, grade: grade, averageScore: averageScore)
-        if modelStudentTwo.firstName == firstName && modelStudentTwo.secondName == secondName && modelStudentTwo.age == age && modelStudentTwo.grade == grade && modelStudentTwo.averageScore == averageScore {
+        let modelStudent = getModelStudent(firstName: firstName, secondName: secondName, age: age, grade: grade, averageScore: averageScore)
+        if modelStudent.firstName == firstName && modelStudent.secondName == secondName && modelStudent.age == age && modelStudent.grade == grade && modelStudent.averageScore == averageScore {
             print("Данные введенного студента уже существуют")
         }else{
             addStudent(model: Student(firstName: firstName, secondName: secondName, age: age, grade: grade, averageScore: averageScore))
@@ -47,8 +69,8 @@ class DataBase{
     }
     
     func addTeacherMain(firstName: String, secondName: String, subject: String, phoneNumber: String){
-        let modelTeacherTwo = getModelTeacher(firstName: firstName, secondName: secondName, subject: subject, phoneNumber: phoneNumber)
-        if modelTeacherTwo.firstName == firstName && modelTeacherTwo.secondName == secondName && modelTeacherTwo.subject == subject && modelTeacherTwo.phoneNumber == phoneNumber {
+        let modelTeacher = getModelTeacher(firstName: firstName, secondName: secondName, subject: subject, phoneNumber: phoneNumber)
+        if modelTeacher.firstName == firstName && modelTeacher.secondName == secondName && modelTeacher.subject == subject && modelTeacher.phoneNumber == phoneNumber {
             print("Данные введенного преподавателя уже существуют")
         }else{
             addTeacher(model: Teacher(firstName: firstName, secondName: secondName, subject: subject, phoneNumber: phoneNumber))
@@ -57,27 +79,33 @@ class DataBase{
     }
     
     func deleteStudent(firstName: String, secondName: String){
-        for (id, item) in studentArray.enumerated(){
-            if item.firstName == firstName && item.secondName == secondName {
-                studentArray.remove(at: id)
-                print("Данные студента удалены")
-                break
-            }else{
+        let delModel = delStudent(firstName: firstName, secondName: secondName)
+        if delModel?.firstName == firstName && delModel?.secondName == secondName {
+            for (id, item) in studentArray.enumerated(){
+                if item.firstName == firstName && item.secondName == secondName {
+                    studentArray.remove(at: id)
+                    print("Данные студента удалены")
+                    break
+                }
+            }
+        }else{
                 print("Студент не найден")
             }
-        }
     }
     
     func deleteTeacher(firstName: String, secondName: String){
-        for (id, item) in teacherArray.enumerated(){
-            if item.firstName == firstName && item.secondName == secondName {
-                teacherArray.remove(at: id)
-                print("Данные преподавателя удалены")
-                break
-            }else{
+        let delModel = delTeacher(firstName: firstName, secondName: secondName)
+        if delModel?.firstName == firstName && delModel?.secondName == secondName {
+            for (id, item) in teacherArray.enumerated(){
+                if item.firstName == firstName && item.secondName == secondName {
+                    teacherArray.remove(at: id)
+                    print("Данные преподавателя удалены")
+                    break
+                }
+            }
+        }else{
                 print("Преподаватель не найден")
             }
-        }
     }
     
     func showAllStudents() {
